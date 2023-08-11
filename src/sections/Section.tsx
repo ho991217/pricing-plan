@@ -23,6 +23,12 @@ const Title = styled.h2`
    line-height: normal;
    letter-spacing: -0.04375rem;
    margin-bottom: 1.75rem;
+   ${({ theme }) => theme.media} {
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: -0.04rem;
+      margin-bottom: 1.25rem;
+   }
 `;
 
 const Description = styled.span`
@@ -33,10 +39,16 @@ const Description = styled.span`
    line-height: 1.5rem; /* 120% */
    letter-spacing: -0.025rem;
    margin-bottom: 4.56rem;
+   ${({ theme }) => theme.media} {
+      text-align: center;
+      font-size: 1rem;
+      letter-spacing: -0.02rem;
+      margin-bottom: 2.81rem;
+   }
 `;
 
 interface SectionProps {
-   title: string;
+   title: string | JSX.Element;
    description: string | JSX.Element;
    children?: React.ReactNode;
 }

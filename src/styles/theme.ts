@@ -4,8 +4,10 @@ export const theme = {
       secondary: "#FFD5C8",
       text: "#121D2A",
       background: "#FFFFFF",
+      white: "#FFFFFF",
    },
    fonts: {
       body: "Pretendard, sans-serif",
    },
+   media: "@media screen and (max-width: 768px)",
 };

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Logo from "./Logo";
+import { useMediaQuery } from "../useMediaQuery";
 
 const Wrapper = styled.footer`
    background: ${({ theme }) => theme.colors.primary};
@@ -23,6 +24,9 @@ const Container = styled.div`
    display: flex;
    justify-content: space-between;
    align-items: center;
+   ${({ theme }) => theme.media} {
+      justify-content: center;
+   }
 `;
 
 const Menu = styled.ul`
@@ -53,16 +57,18 @@ const menuItems = [
 ];
 
 const Footer = () => {
+   const { isMobile } = useMediaQuery();
    return (
       <Wrapper>
          <Container>
             <Logo theme="light" />
             <Menu>
-               {menuItems.map((item, index) => (
-                  <li key={index}>
-                     <a href={item.link}>{item.name}</a>
-                  </li>
-               ))}
+               {!isMobile &&
+                  menuItems.map((item, index) => (
+                     <li key={index}>
+                        <a href={item.link}>{item.name}</a>
+                     </li>
+                  ))}
             </Menu>
          </Container>
       </Wrapper>

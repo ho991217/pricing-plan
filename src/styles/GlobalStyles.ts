@@ -13,6 +13,7 @@ export const GlobalStyles = createGlobalStyle`
       box-sizing: inherit;
    }
    body {
+      overflow-x: hidden;
       margin: 0;
       padding: 0;
       font-family: ${(props) => props.theme.fonts.body};

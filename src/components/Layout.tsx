@@ -8,6 +8,7 @@ const Container = styled.section`
    display: flex;
    flex-direction: column;
    align-items: center;
+   overflow-x: hidden;
 `;
 
 interface LayoutProps extends HTMLAttributes<HTMLElement> {

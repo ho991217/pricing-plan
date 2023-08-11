@@ -8,6 +8,7 @@ import Section from "./sections/Section";
 import SampleImg from "./assets/sample_image.png";
 import { ReactComponent as ChevronDown } from "./assets/chevron_down.svg";
 import Footer from "./components/Footer";
+import { useMediaQuery } from "./useMediaQuery";
 
 const Main = styled.main`
    display: flex;
@@ -18,6 +19,13 @@ const SampleImage = styled.img`
    width: 67.125rem;
    height: 44.75rem;
    flex-shrink: 0;
+   object-fit: cover;
+   transition: all 0.3s ease-in-out;
+   ${({ theme }) => theme.media} {
+      width: 18rem;
+      height: 22.875rem;
+      border-radius: 1.875rem;
+   }
 `;
 
 const FlowChart = styled.div`
@@ -26,6 +34,9 @@ const FlowChart = styled.div`
    align-items: center;
    gap: 1.12rem;
    margin-bottom: 7.31rem;
+   ${({ theme }) => theme.media} {
+      margin-bottom: 6.19rem;
+   }
 `;
 
 const FlowBox = styled.div`
@@ -50,12 +61,19 @@ const FlowBox = styled.div`
       0px 22.3363094329834px 17.869047164916992px 0px rgba(0, 0, 0, 0.04),
       0px 41.777610778808594px 33.422088623046875px 0px rgba(0, 0, 0, 0.05),
       0px 100px 80px 0px rgba(0, 0, 0, 0.07);
+   ${({ theme }) => theme.media} {
+      width: 18rem;
+      height: 4.75rem;
+   }
 `;
 
 const Chevron = styled(ChevronDown)`
    width: 0.75rem;
-   height: 1.8125rem;
    flex-shrink: 0;
+   ${({ theme }) => theme.media} {
+      height: 1.8125rem;
+      flex-shrink: 0;
+   }
 `;
 
 const flow = [
@@ -70,20 +88,26 @@ const flow = [
 ];
 
 function App() {
+   const { isMobile } = useMediaQuery();
    return (
       <>
          <GlobalNav />
          <Main>
-            <HeroSection />
-            <Pricing />
+            <HeroSection isMobile={isMobile} />
+            <Pricing isMobile={isMobile} />
             <Section
-               title="‘프로젝트 구름톡’을 소개합니다."
+               title={
+                  <>
+                     ‘프로젝트 구름톡’을
+                     <br /> 소개합니다.
+                  </>
+               }
                description={
                   <>
-                     ‘프로젝트 구름톡’은 현재 블랙베리OS 10 이하의 기기에서
-                     지원이 중단된
-                     <br />
-                     카카오톡 등의 앱을 구동하기 위해 시작된 프로젝트입니다.
+                     ‘프로젝트 구름톡’은 현재 블랙베리OS 10{isMobile && <br />}{" "}
+                     이하의 기기에서 지원이 중단된
+                     {!isMobile && <br />} 카카오톡 등의{isMobile && <br />}{" "}
+                     앱을 구동하기 위해 시작된 프로젝트입니다.
                   </>
                }
             >
@@ -94,21 +118,29 @@ function App() {
                description={
                   <>
                      <div>
-                        프로젝트 구름톡은 집안에 개인의 미니 서버를 설치하고 그
-                        서버에서 구동되는 카카오톡을 <br />
-                        원격 스트리밍 하는 방식입니다. 서버 설치는 최초 1회만
-                        해두면 집안에서는 물론 밖에서도 사용가능합니다.
+                        프로젝트 구름톡은 집안에 개인의 미니 서버를
+                        {isMobile && <br />} 설치하고 그 서버에서 구동되는
+                        카카오톡을 <br />
+                        원격 스트리밍 하는 방식입니다.
+                        {isMobile && (
+                           <>
+                              <br />
+                              <br />
+                           </>
+                        )}{" "}
+                        서버 설치는 최초 1회만 해두면{isMobile && <br />}{" "}
+                        집안에서는 물론 밖에서도 사용가능합니다.
                      </div>
                      <div
                         style={{
-                           marginTop: "1.13rem",
+                           marginTop: isMobile ? "0.88rem" : "1.13rem",
                            color: "#B1B1B1",
                            textAlign: "center",
-                           fontSize: "1.125rem",
+                           fontSize: isMobile ? "0.75rem" : "1.125rem",
                            fontStyle: "normal",
                            fontWeight: "500",
                            lineHeight: "1.5rem",
-                           letterSpacing: "-0.0225rem",
+                           letterSpacing: isMobile ? "-0.015rem" : "-0.0225rem",
                         }}
                      >
                         (사용시 기기에 Wi-Fi나 데이터 네트워크가 연결되어 있어야
@@ -119,8 +151,8 @@ function App() {
             >
                <iframe
                   style={{ borderRadius: "1.875rem" }}
-                  width="1074"
-                  height="716"
+                  width={isMobile ? "288" : "1074"}
+                  height={isMobile ? "366" : "716"}
                   src="https://www.youtube-nocookie.com/embed/Vi1E_fyiwmI"
                   title="YouTube video player"
                   frameBorder="0"
@@ -134,14 +166,15 @@ function App() {
                   <span
                      style={{
                         textAlign: "center",
-                        fontSize: "1.25rem",
+                        fontSize: isMobile ? "1rem" : "1.25rem",
                         fontStyle: "normal",
                         fontWeight: 500,
                         lineHeight: "1.5rem",
                         letterSpacing: "-0.025rem",
                      }}
                   >
-                     구매 및 배송 과정과 사용시 최초 1회 필요한 설치 과정입니다.
+                     구매 및 배송 과정과{isMobile && <br />} 사용시 최초 1회
+                     필요한 설치 과정입니다.
                   </span>
                }
             >

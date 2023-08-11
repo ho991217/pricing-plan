@@ -15,7 +15,7 @@ const Container = styled.button<{ variant?: ButtonProps["variant"] }>`
          case "fill":
             return `
                background-color: ${theme.colors.primary};
-               color: ${theme.colors.secondary};
+               color: ${theme.colors.white};
             `;
          case "outlined":
             return `

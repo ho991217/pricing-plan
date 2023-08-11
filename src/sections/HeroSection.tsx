@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import Button from "../components/Button";
 
 import PhoneSrc from "../assets/phone_2x.png";
+import { useMediaQuery } from "../useMediaQuery";
 
 const Container = styled.div`
    display: flex;
@@ -36,6 +37,12 @@ const Title = styled.h1`
    line-height: normal;
    letter-spacing: -0.06rem;
    margin-bottom: 1.5rem;
+   ${({ theme }) => theme.media} {
+      font-size: 2rem;
+      text-align: center;
+      letter-spacing: -0.04rem;
+      margin-bottom: 1.25rem;
+   }
    strong {
       color: ${({ theme }) => theme.colors.primary};
    }
@@ -47,20 +54,34 @@ const SubTitle = styled.span`
    font-weight: 500;
    line-height: 1.6875rem; /* 128.571% */
    letter-spacing: -0.02625rem;
+   ${({ theme }) => theme.media} {
+      text-align: center;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.1875rem; /* 118.75% */
+      letter-spacing: -0.02rem;
+      margin-bottom: 2.19rem;
+   }
    margin-bottom: 2.06rem;
 `;
 
 const Image = styled.img.attrs({ loading: "lazy" })`
    width: 37.22094rem;
    height: 37.22094rem;
-   transform: translateX(14rem);
+   @media screen and (min-width: 769px) {
+      transform: translateX(14rem);
+   }
+   ${({ theme }) => theme.media} {
+      margin-top: 2.44rem;
+   }
 `;
 
-const HeroSection = () => {
+const HeroSection = ({ isMobile }: { isMobile: boolean }) => {
    return (
       <Layout
          style={{
-            flexDirection: "row",
+            flexDirection: isMobile ? "column" : "row",
             height: "calc(60rem-115px)",
             alignItems: "center",
          }}
