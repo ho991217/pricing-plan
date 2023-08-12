@@ -126,7 +126,9 @@ const GlobalNav = () => {
          {mobileMenuOpen && (
             <MobileMenu>
                {menuItems.map((item, index) => (
-                  <li key={index}>{item.name}</li>
+                  <li key={index}>
+                     <a href={item.link}>{item.name}</a>
+                  </li>
                ))}
             </MobileMenu>
          )}
