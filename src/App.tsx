@@ -9,6 +9,7 @@ import SampleImg from "./assets/sample_image.png";
 import { ReactComponent as ChevronDown } from "./assets/chevron_down.svg";
 import Footer from "./components/Footer";
 import { useMediaQuery } from "./useMediaQuery";
+import { Helmet } from "react-helmet-async";
 
 const Main = styled.main`
    display: flex;
@@ -91,6 +92,33 @@ function App() {
    const { isMobile } = useMediaQuery();
    return (
       <>
+         <Helmet>
+            <title>프로젝트 구름톡 - 다시 한번 블랙베리를 위대하게.</title>
+            <meta
+               name="description"
+               content="프로젝트 구름톡은 현재 블랙베리OS 10 이하의 기기에서 지원이 중단된 카카오톡 등의 앱을 구동하기 위해 시작된 프로젝트입니다."
+            />
+            <meta
+               name="keywords"
+               content="프로젝트 구름톡, 구름톡, 블랙베리, 블랙베리OS, 블랙베리OS10, 블랙베리OS10이하, 카카오톡, 카톡, 카카오톡 구동, 카카오톡 구동 불가, 카카오톡 구동 불가능, 카카오톡 구동 불가능한 기기, 카카오톡 구동 불가능한 블랙베리, 카카오톡 구동 불가능한 블랙베리OS, 카카오톡 구동 불가능한 블랙베리OS10, 카카오톡 구동 불가능한 블랙베리OS10이하, 카카오톡 구동 불가능한 블랙베리OS10이하 기기, 카카오톡 구동 불가능한 블랙베리OS10이하 블랙베리, 카카오톡 구동 불가능한 블랙베리OS10이하 블랙베리 기기, 카카오톡 구동 불가능한 블랙베리OS10이하 블랙베리OS, 카카오톡 구동 불가능한 블랙베리OS10이하 블랙베리OS 기기, 카카오톡 구동 불가능한 블랙베리OS10이하 블랙베리OS10, 카카오톡 구동 불가능한 블랙베리OS10이하 블랙베리OS10이하,
+               "
+            />
+            <meta
+               property="og:title"
+               content="프로젝트 구름톡 - 다시 한번 블랙베리를 위대하게."
+            />
+            <meta
+               property="og:description"
+               content="프로젝트 구름톡은 현재 블랙베리OS 10 이하의 기기에서 지원이 중단된 카카오톡 등의 앱을 구동하기 위해 시작된 프로젝트입니다."
+            />
+            <meta
+               property="og:image"
+               content="http://cloudtalk.co.kr/thumbnail.png"
+            />
+            <meta property="og:url" content="http://cloudtalk.co.kr" />
+            <meta property="og:type" content="website" />
+            <meta property="og:site_name" content="프로젝트 구름톡" />
+         </Helmet>
          <GlobalNav />
          <Main>
             <HeroSection isMobile={isMobile} />
