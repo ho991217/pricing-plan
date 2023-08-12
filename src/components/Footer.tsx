@@ -44,7 +44,7 @@ const Menu = styled.ul`
 const menuItems = [
    {
       name: "원격 지원 문의",
-      link: "#",
+      link: "http://pf.kakao.com/_alKEG",
    },
    {
       name: "온라인 설명서",
@@ -52,7 +52,7 @@ const menuItems = [
    },
    {
       name: "카카오톡 문의",
-      link: "#",
+      link: "http://pf.kakao.com/_alKEG",
    },
 ];
 

@@ -96,7 +96,13 @@ const HeroSection = ({ isMobile }: { isMobile: boolean }) => {
                블랙베리 카카오톡 프로젝트 확장형 <br /> 프로젝트 구름톡 1.0 슈퍼
                얼리버드 진행중!
             </SubTitle>
-            <Button>사전 예약</Button>
+            <Button
+               onClick={() => {
+                  window.open("https://pf.kakao.com/_alKEG");
+               }}
+            >
+               사전 예약
+            </Button>
          </Container>
          <Image src={PhoneSrc} alt="블랙베리 폰" />
       </Layout>

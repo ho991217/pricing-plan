@@ -213,7 +213,14 @@ const SuperEarlyBird = () => {
             <li>무료 네트워크 원격 설정</li>
             <li>원격 지원 (유료)</li>
          </PricingCardList>
-         <Button variant="secondary">사전 예약</Button>
+         <Button
+            variant="secondary"
+            onClick={() => {
+               window.open("https://pf.kakao.com/_alKEG");
+            }}
+         >
+            사전 예약
+         </Button>
       </PricingCard>
    );
 };
