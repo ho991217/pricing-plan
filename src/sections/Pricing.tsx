@@ -205,7 +205,7 @@ const SuperEarlyBird = () => {
          </PricingCardTitle>
          <PricingCardPrice>₩ 75,000</PricingCardPrice>
          <PricingCardDescription>
-            (배송비 포함 / 20 수향 한정)
+            (배송비 포함 / 20 수량 한정)
          </PricingCardDescription>
          <PricingCardList style={{ listStyleImage: `url(${WhiteCheckIcon})` }}>
             <li>제일 저렴한 얼리버드</li>
@@ -225,7 +225,7 @@ const EarlyBird = () => {
          <PricingCardTitle>얼리버드</PricingCardTitle>
          <PricingCardPrice>₩ 95,000</PricingCardPrice>
          <PricingCardDescription>
-            (배송비 포함 / 20 수향 한정)
+            (배송비 포함 / 20 수량 한정)
          </PricingCardDescription>
          <PricingCardList>
             <li>슈퍼 얼리버드 이후</li>
@@ -245,7 +245,7 @@ const Normal = () => {
          <PricingCardTitle>일반 구매</PricingCardTitle>
          <PricingCardPrice>₩ 125,000</PricingCardPrice>
          <PricingCardDescription>
-            (배송비 포함 / 50 수향 한정)
+            (배송비 포함 / 50 수량 한정)
          </PricingCardDescription>
          <PricingCardList>
             <li>일반 구매가</li>
