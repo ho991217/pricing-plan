@@ -198,20 +198,45 @@ const PricingCardList = styled.ul`
 
 const SuperEarlyBird = () => {
    return (
-      <PricingCard style={{ background: "#5F30E2", color: "#fff" }}>
+      <PricingCard>
          <Icon src={PlusIcon_2} alt="아이콘" />
-         <PricingCardTitle style={{ color: "#fff" }}>
-            슈퍼 얼리버드
-         </PricingCardTitle>
-         <PricingCardPrice>₩ 75,000</PricingCardPrice>
+         <PricingCardTitle>슈퍼 얼리버드</PricingCardTitle>
+         <PricingCardPrice>완판</PricingCardPrice>
          <PricingCardDescription>
             (배송비 포함 / 20 수량 한정)
          </PricingCardDescription>
-         <PricingCardList style={{ listStyleImage: `url(${WhiteCheckIcon})` }}>
+         <PricingCardList>
             <li>제일 저렴한 얼리버드</li>
             <li>초도 물량 발송</li>
             <li>무료 네트워크 원격 설정</li>
             <li>원격 지원 (유료)</li>
+         </PricingCardList>
+         <Button
+            variant="outlined"
+            onClick={() => {
+               window.open("https://pf.kakao.com/_alKEG");
+            }}
+         >
+            예약 종료
+         </Button>
+      </PricingCard>
+   );
+};
+
+const EarlyBird = () => {
+   return (
+      <PricingCard style={{ background: "#5F30E2", color: "#fff" }}>
+         <Icon src={PlusIcon_1} alt="아이콘" />
+         <PricingCardTitle style={{ color: "#fff" }}>얼리버드</PricingCardTitle>
+         <PricingCardPrice>₩ 95,000</PricingCardPrice>
+         <PricingCardDescription>
+            (배송비 포함 / 20 수량 한정)
+         </PricingCardDescription>
+         <PricingCardList style={{ listStyleImage: `url(${WhiteCheckIcon})` }}>
+            <li>슈퍼 얼리버드 이후</li>
+            <li>초도 물량 발송</li>
+            <li>네트워크 설정 설명서</li>
+            <li>원격지원 (유료)</li>
          </PricingCardList>
          <Button
             variant="secondary"
@@ -221,26 +246,6 @@ const SuperEarlyBird = () => {
          >
             사전 예약
          </Button>
-      </PricingCard>
-   );
-};
-
-const EarlyBird = () => {
-   return (
-      <PricingCard>
-         <Icon src={PlusIcon_1} alt="아이콘" />
-         <PricingCardTitle>얼리버드</PricingCardTitle>
-         <PricingCardPrice>₩ 95,000</PricingCardPrice>
-         <PricingCardDescription>
-            (배송비 포함 / 20 수량 한정)
-         </PricingCardDescription>
-         <PricingCardList>
-            <li>슈퍼 얼리버드 이후</li>
-            <li>초도 물량 발송</li>
-            <li>네트워크 설정 설명서</li>
-            <li>원격지원 (유료)</li>
-         </PricingCardList>
-         <Button variant="outlined">오픈 예정</Button>
       </PricingCard>
    );
 };
@@ -300,8 +305,8 @@ const Pricing = ({ isMobile }: { isMobile: boolean }) => {
             </PricingContainer>
 
             <PricingContainer>
-               <EarlyBird />
                <SuperEarlyBird />
+               <EarlyBird />
                <Normal />
             </PricingContainer>
          </ResponsiveLayout>
