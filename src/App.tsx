@@ -181,7 +181,7 @@ function App() {
                   style={{ borderRadius: "1.875rem" }}
                   width={isMobile ? "288" : "1074"}
                   height={isMobile ? "366" : "716"}
-                  src="https://www.youtube-nocookie.com/embed/Vi1E_fyiwmI"
+                  src="https://www.youtube.com/embed/teIAg66WgTM"
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
