@@ -280,10 +280,10 @@ const Pricing = ({ isMobile }: { isMobile: boolean }) => {
       >
          <TitleContainer>
             <Title>
-               '프로젝트 구름톡'{isMobile && <br />} : 슈퍼 얼리버드 진행중!
+               '프로젝트 구름톡'{isMobile && <br />} : 사전예약 진행중!
             </Title>
             <SubTitle>
-               현재 슈퍼 얼리버드 기간이며 초도 물량 20대{isMobile && <br />}{" "}
+               현재 사전예약 기간이며 초도 물량 20대{isMobile && <br />}{" "}
                현재 배송까지 1개월 내외로 예정되어 있습니다.
             </SubTitle>
          </TitleContainer>
